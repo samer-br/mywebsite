@@ -193,6 +193,16 @@
           <h3 id="stageTitle">Ingest</h3>
           <p id="stageDesc">Documents, wikis, tickets — raw organizational knowledge flows in.</p>
         </div>
+        <svg class="drone drone--pipeline" viewBox="0 0 80 44" aria-hidden="true">
+          <line class="drone-prop" x1="6" y1="8" x2="30" y2="8" stroke="#9fb4dd" stroke-width="2"/>
+          <line class="drone-prop drone-prop--b" x1="50" y1="8" x2="74" y2="8" stroke="#9fb4dd" stroke-width="2"/>
+          <line x1="18" y1="8" x2="26" y2="16" stroke="#8fa3c8" stroke-width="2"/>
+          <line x1="62" y1="8" x2="54" y2="16" stroke="#8fa3c8" stroke-width="2"/>
+          <rect x="22" y="14" width="36" height="20" rx="10" fill="#dde7fb"/>
+          <circle cx="34" cy="24" r="3.4" fill="#55d7ff"/>
+          <circle cx="46" cy="24" r="3.4" fill="#55d7ff"/>
+          <circle class="drone-light" cx="40" cy="36" r="2.6" fill="#5affc3"/>
+        </svg>
         <div class="pipeline__diagram" id="pipeDiagram">
           <svg class="pipeline__wire" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
             <path id="wirePath" d="M40,60 C160,60 160,60 260,60 S460,60 500,60 S740,60 740,60 S940,60 960,60" fill="none" stroke="rgba(85,215,255,.18)" stroke-width="2"/>
@@ -284,6 +294,16 @@
     <!-- ══════════ CONTACT ══════════ -->
     <section class="contact" id="contact">
       <div class="contact__inner">
+        <svg class="drone drone--contact" viewBox="0 0 80 44" aria-hidden="true">
+          <line class="drone-prop" x1="6" y1="8" x2="30" y2="8" stroke="#9fb4dd" stroke-width="2"/>
+          <line class="drone-prop drone-prop--b" x1="50" y1="8" x2="74" y2="8" stroke="#9fb4dd" stroke-width="2"/>
+          <line x1="18" y1="8" x2="26" y2="16" stroke="#8fa3c8" stroke-width="2"/>
+          <line x1="62" y1="8" x2="54" y2="16" stroke="#8fa3c8" stroke-width="2"/>
+          <rect x="22" y="14" width="36" height="20" rx="10" fill="#dde7fb"/>
+          <circle cx="34" cy="24" r="3.4" fill="#55d7ff"/>
+          <circle cx="46" cy="24" r="3.4" fill="#55d7ff"/>
+          <circle class="drone-light" cx="40" cy="36" r="2.6" fill="#ff8bd7"/>
+        </svg>
         <p class="mono reveal contact__eyebrow">// STDOUT</p>
         <h2 class="contact__title reveal" style="--d:.06s">Let's build something<br/><span class="grad">intelligent.</span></h2>
         <p class="contact__sub reveal" style="--d:.12s">Have an AI problem worth solving? My inbox compiles instantly.</p>
@@ -302,6 +322,42 @@
       </footer>
     </section>
   </main>
+
+  <!-- ══════════ ROBO ASSISTANT ══════════ -->
+  <div class="robo" id="robo" role="button" tabindex="0" aria-label="Robot assistant — click for a message">
+    <div class="robo__bubble mono" id="roboBubble">bleep. welcome to samer.ai</div>
+    <svg class="robo__svg" viewBox="0 0 120 150" aria-hidden="true">
+      <defs>
+        <radialGradient id="thrust" cx=".5" cy=".2" r=".8">
+          <stop offset="0" stop-color="#55d7ff" stop-opacity=".7"/>
+          <stop offset="1" stop-color="#55d7ff" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="shell" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#f2f6ff"/>
+          <stop offset="1" stop-color="#c9d6f2"/>
+        </linearGradient>
+      </defs>
+      <ellipse class="robo-thrust" cx="60" cy="136" rx="26" ry="12" fill="url(#thrust)"/>
+      <line x1="60" y1="20" x2="60" y2="8" stroke="#8fa3c8" stroke-width="2.5"/>
+      <circle class="robo-antenna" cx="60" cy="6" r="4" fill="#5affc3"/>
+      <!-- arms -->
+      <g class="robo-arm robo-arm--l"><rect x="14" y="80" width="14" height="30" rx="7" fill="url(#shell)"/></g>
+      <g class="robo-arm robo-arm--r"><rect x="92" y="80" width="14" height="30" rx="7" fill="url(#shell)"/></g>
+      <!-- body -->
+      <rect x="30" y="72" width="60" height="50" rx="22" fill="url(#shell)"/>
+      <circle class="robo-core" cx="60" cy="96" r="8" fill="#55d7ff"/>
+      <!-- head -->
+      <rect x="22" y="18" width="76" height="56" rx="28" fill="url(#shell)"/>
+      <rect x="31" y="30" width="58" height="32" rx="16" fill="#0a1024"/>
+      <g class="robo-eyes" id="roboEyes">
+        <circle class="robo-eye" cx="48" cy="45" r="6" fill="#5fd9ff"/>
+        <circle class="robo-eye" cx="72" cy="45" r="6" fill="#5fd9ff"/>
+      </g>
+      <path class="robo-smile" d="M52 55 Q60 60 68 55" fill="none" stroke="#5fd9ff" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="24" cy="46" r="5" fill="#8b7bff" opacity=".8"/>
+      <circle cx="96" cy="46" r="5" fill="#8b7bff" opacity=".8"/>
+    </svg>
+  </div>
 
   <script src="js/main.js" defer></script>
   <script src="js/particles.js" defer></script>

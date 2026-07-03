@@ -87,6 +87,7 @@
   const scrollBar = document.getElementById("scrollBar");
   const timelineEl = document.getElementById("timeline");
   const timelineProgress = document.getElementById("timelineProgress");
+  let roboWatch = () => {}; // assigned once the robot boots up
 
   function onScroll() {
     const max = document.documentElement.scrollHeight - innerHeight;
@@ -108,6 +109,7 @@
     }
 
     pipelineUpdate();
+    roboWatch();
   }
   addEventListener("scroll", onScroll, { passive: true });
 
@@ -444,6 +446,94 @@
     addEventListener("resize", scResize);
     if (!reduceMotion) requestAnimationFrame(scFrame);
     else { scVisible = true; scFrame(0); }
+  }
+
+  /* ── robo assistant ──────────────────────────────────── */
+  const robo = document.getElementById("robo");
+  const roboBubble = document.getElementById("roboBubble");
+  const roboEyes = document.getElementById("roboEyes");
+  if (robo) {
+    const sectionLines = {
+      home: "bleep. welcome to samer.ai — scroll me apart!",
+      about: "this is the human I work for. solid unit.",
+      experience: "he leads my team at Ericsson. 10/10 boss.",
+      pipeline: "watch closely — the pipeline runs on scroll.",
+      skills: "warning: dense neural activity in this area.",
+      work: "systems he shipped. I helped. sort of.",
+      contact: "ping him — his inbox compiles instantly.",
+    };
+    const quips = [
+      "beep boop. hire this man.",
+      "I was trained on his commit history.",
+      "my loss function converged the day he built me.",
+      "01110011 01100001 01101101 01100101 01110010",
+      "fun fact: he speaks 3 human languages. I speak JSON.",
+      "grounded answers only. I checked the retrieval.",
+    ];
+    let roboSection = "";
+    let quipIdx = 0;
+    let bubbleTimer = null;
+
+    function say(text, hold = 4200) {
+      roboBubble.textContent = text;
+      robo.classList.add("show-bubble");
+      clearTimeout(bubbleTimer);
+      bubbleTimer = setTimeout(() => robo.classList.remove("show-bubble"), hold);
+    }
+
+    // greet after boot
+    setTimeout(() => say(sectionLines.home, 5200), reduceMotion ? 400 : 3200);
+
+    // section-aware commentary (hooked into scroll loop)
+    roboWatch = () => {
+      let current = "home";
+      for (const s of sections) {
+        if (s.getBoundingClientRect().top <= innerHeight * 0.4) current = s.id;
+      }
+      if (current !== roboSection) {
+        roboSection = current;
+        if (sectionLines[current]) {
+          say(sectionLines[current]);
+          if (!reduceMotion) {
+            robo.classList.remove("wave");
+            void robo.offsetWidth; // restart animation
+            robo.classList.add("wave");
+          }
+        }
+      }
+    };
+
+    // click / keyboard → quip + spin
+    const react = () => {
+      say(quips[quipIdx++ % quips.length], 3600);
+      if (!reduceMotion) {
+        robo.classList.remove("spin");
+        void robo.offsetWidth;
+        robo.classList.add("spin");
+      }
+    };
+    robo.addEventListener("click", react);
+    robo.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); react(); }
+    });
+
+    // eyes follow the cursor
+    if (!isTouch && !reduceMotion) {
+      let ex = 0, ey = 0, tx = 0, ty = 0;
+      addEventListener("mousemove", (e) => {
+        const r = robo.getBoundingClientRect();
+        const dx = e.clientX - (r.left + r.width / 2);
+        const dy = e.clientY - (r.top + r.height * 0.32);
+        const d = Math.hypot(dx, dy) || 1;
+        const m = Math.min(d, 120) / 120 * 3.2;
+        tx = (dx / d) * m; ty = (dy / d) * m;
+      });
+      (function eyeLoop() {
+        ex = lerp(ex, tx, 0.12); ey = lerp(ey, ty, 0.12);
+        roboEyes.style.transform = `translate(${ex}px, ${ey}px)`;
+        requestAnimationFrame(eyeLoop);
+      })();
+    }
   }
 
   /* ── misc ────────────────────────────────────────────── */
