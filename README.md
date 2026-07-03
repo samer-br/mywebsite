@@ -37,8 +37,8 @@ python3 -m http.server 8000
 
 ## Deploy (GitHub Pages — free)
 
-Pushes to `main` auto-deploy via the workflow in `.github/workflows/deploy.yml`.
-One-time setup: **Settings → Pages → Source → GitHub Actions**.
+Every push publishes the site to the `gh-pages` branch via `.github/workflows/deploy.yml`.
+If the site isn't live yet, one-time setup: **Settings → Pages → Branch: `gh-pages` → Save**.
 
 ---
 
