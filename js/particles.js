@@ -57,16 +57,22 @@
     const data = octx.getImageData(0, 0, cols, rows).data;
 
     particles = [];
+    const pcx = ox + dw / 2, pcy = oy + dh * 0.44;
     for (let y = 0; y < rows; y++) {
       for (let x = 0; x < cols; x++) {
         const i = (y * cols + x) * 4;
         const r = data[i], g = data[i + 1], b = data[i + 2];
         const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-        if (lum < 14) continue; // skip near-black — lets the portrait float
+        if (lum < 16) continue; // skip near-black — lets the portrait float
         const hx = ox + x * GAP + GAP / 2;
         const hy = oy + y * GAP + GAP / 2;
+        // dissolve into the page: drop particles ever more often near the edges
+        const nd = Math.hypot((hx - pcx) / (dw * 0.55), (hy - pcy) / (dh * 0.58));
+        const edge = clamp((nd - 0.62) / 0.38, 0, 1);
+        if (Math.random() < edge * edge) continue;
         const ang = Math.random() * Math.PI * 2;
         particles.push({
+          fade: 1 - edge * 0.75,
           hx, hy,                                    // home
           sx: W / 2 + Math.cos(ang) * W * 1.1,       // spawn (off-canvas ring)
           sy: H / 2 + Math.sin(ang) * H * 1.1,
@@ -137,7 +143,7 @@
 
       // scanning shimmer wave
       const wave = 1 + 0.5 * Math.max(0, Math.sin(time * 1.6 - y * 0.018));
-      const alpha = (1 - scatter * 0.95) * (0.35 + 0.65 * a);
+      const alpha = (1 - scatter * 0.95) * (0.35 + 0.65 * a) * p.fade;
       if (alpha <= 0.02) continue;
 
       ctx.globalAlpha = alpha;
