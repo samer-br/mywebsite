@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samer Albardan — AI &amp; Machine Learning Engineer</title>
+  <meta name="description" content="Samer Albardan — AI/ML Engineer specializing in LLM applications, RAG systems, agentic workflows and production ML. Based in Karlskrona, Sweden." />
+  <meta name="author" content="Samer Albardan" />
+  <meta property="og:title" content="Samer Albardan — AI & Machine Learning Engineer" />
+  <meta property="og:description" content="LLM Applications · RAG Systems · Agentic Workflows · Production ML" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/avatar.jpg" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ══════════ BOOT LOADER ══════════ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__terminal">
+      <div class="loader__bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="loader__title">samer@albardan: ~/portfolio</span></div>
+      <pre class="loader__body" id="loaderBody"></pre>
+    </div>
+  </div>
+
+  <!-- ══════════ AMBIENT CANVASES ══════════ -->
+  <canvas id="neuralCanvas" class="neural-canvas" aria-hidden="true"></canvas>
+  <div class="cursor" id="cursor" aria-hidden="true"><div class="cursor__ring"></div><div class="cursor__dot"></div></div>
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar" id="scrollBar"></div></div>
+
+  <!-- ══════════ NAV ══════════ -->
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#home" data-magnetic>
+      <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="url(#lg)" stroke-width="1.6"/><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55d7ff"/><stop offset="1" stop-color="#8b7bff"/></linearGradient></defs><text x="16" y="21.5" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="15" fill="#eaf6ff">S</text></svg>
+      <span>samer<b>.ai</b></span>
+    </a>
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="#about" data-nav>About</a>
+      <a href="#experience" data-nav>Experience</a>
+      <a href="#pipeline" data-nav>Pipeline</a>
+      <a href="#skills" data-nav>Skills</a>
+      <a href="#work" data-nav>Work</a>
+      <a href="#contact" class="nav__cta" data-nav>Contact</a>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <main id="main">
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="hero" id="home">
+      <div class="hero__inner">
+        <div class="hero__text">
+          <p class="hero__eyebrow reveal mono">// AI &amp; MACHINE LEARNING ENGINEER</p>
+          <h1 class="hero__title reveal" style="--d:.08s">Samer<br/><span class="grad">Albardan</span></h1>
+          <p class="hero__typing mono reveal" style="--d:.16s">&gt; <span id="typed"></span><span class="caret">▊</span></p>
+          <p class="hero__sub reveal" style="--d:.24s">I design and ship <strong>production LLM systems</strong> — RAG pipelines, multi-agent workflows and predictive ML — currently leading an AI team at <strong>Ericsson</strong>.</p>
+          <div class="hero__actions reveal" style="--d:.32s">
+            <a class="btn btn--primary" href="#work" data-magnetic><span>Explore my work</span></a>
+            <a class="btn btn--ghost" href="#contact" data-magnetic><span>Get in touch</span></a>
+          </div>
+          <div class="hero__meta reveal mono" style="--d:.4s">
+            <span class="pulse-dot"></span> Karlskrona, Sweden · open to AI/ML opportunities
+          </div>
+        </div>
+        <div class="hero__visual" id="heroVisual">
+          <canvas id="particleCanvas" aria-label="Particle portrait of Samer Albardan"></canvas>
+          <div class="hero__visual-hint mono">move your cursor · scroll to disassemble</div>
+        </div>
+      </div>
+      <a class="hero__scroll mono" href="#about" aria-label="Scroll down"><span class="hero__scroll-line"></span>scroll</a>
+    </section>
+
+    <!-- ══════════ STATS ══════════ -->
+    <section class="stats">
+      <div class="stats__grid">
+        <div class="stat reveal"><span class="stat__num mono"><b data-count="4">0</b>+</span><span class="stat__label">years building ML systems</span></div>
+        <div class="stat reveal" style="--d:.08s"><span class="stat__num mono"><b data-count="3">0</b></span><span class="stat__label">countries — thesis research collab</span></div>
+        <div class="stat reveal" style="--d:.16s"><span class="stat__num mono">M.Sc.</span><span class="stat__label">Civilingenjör, Software Engineering</span></div>
+        <div class="stat reveal" style="--d:.24s"><span class="stat__num mono"><b data-count="3">0</b></span><span class="stat__label">languages — EN · SV · AR</span></div>
+      </div>
+    </section>
+
+    <!-- ══════════ ABOUT ══════════ -->
+    <section class="section about" id="about">
+      <div class="section__head reveal">
+        <span class="section__index mono">01</span>
+        <h2 class="section__title">The engineer<br/><span class="grad">behind the models</span></h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__photo reveal" data-tilt>
+          <div class="holo-frame">
+            <img src="assets/photo.jpg" alt="Samer Albardan" loading="lazy" />
+            <div class="holo-frame__scan"></div>
+            <div class="holo-frame__corner tl"></div><div class="holo-frame__corner tr"></div>
+            <div class="holo-frame__corner bl"></div><div class="holo-frame__corner br"></div>
+            <div class="holo-frame__tag mono">samer.albardan — human, verified ✓</div>
+          </div>
+        </div>
+        <div class="about__text">
+          <p class="reveal">I'm an AI/ML engineer who likes the whole journey — from a messy pile of documents to a grounded answer on a user's screen. My work lives where <strong class="hl">LLMs meet production</strong>: Retrieval-Augmented Generation, graph-based retrieval, agent orchestration and the full stack that carries them.</p>
+          <p class="reveal" style="--d:.08s">At <strong class="hl">Ericsson</strong> I grew from engineer to full-stack developer to <strong class="hl">team lead</strong>, building an internal AI assistant that retrieves knowledge across organizational documentation. Before that, I researched <strong class="hl">digital twins and failure classification</strong> with Volvo CE during my master's thesis — an international collaboration across Sweden, Brazil and Japan.</p>
+          <p class="reveal" style="--d:.16s">I hold a five-year <strong class="hl">Civilingenjör degree in Software Engineering</strong> (B.Sc. + M.Sc.) from Blekinge Institute of Technology with an AI/ML specialization, and I trained in human-centered design through the global <strong class="hl">Sugar Network</strong> innovation program. Outside work I chair a student nation, connecting students with companies and community.</p>
+          <div class="about__tags reveal mono" style="--d:.24s">
+            <span>#rag</span><span>#agents</span><span>#pytorch</span><span>#llm-apps</span><span>#design-thinking</span><span>#team-lead</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ EXPERIENCE ══════════ -->
+    <section class="section experience" id="experience">
+      <div class="section__head reveal">
+        <span class="section__index mono">02</span>
+        <h2 class="section__title">Experience<br/><span class="grad">log —</span></h2>
+      </div>
+      <div class="timeline" id="timeline">
+        <div class="timeline__track" aria-hidden="true"><div class="timeline__progress" id="timelineProgress"></div></div>
+
+        <article class="tl-item reveal">
+          <div class="tl-item__node" aria-hidden="true"></div>
+          <div class="tl-item__card" data-tilt>
+            <p class="tl-item__period mono">Jun 2024 — Present</p>
+            <h3 class="tl-item__role">AI / ML Engineer — <span class="grad">Team Lead</span></h3>
+            <p class="tl-item__org">Ericsson · Karlskrona, Sweden</p>
+            <ul>
+              <li>Lead a team building an internal AI assistant for knowledge retrieval and productivity, built on LLM-driven RAG over internal documentation.</li>
+              <li>Designed Python RAG pipelines with prompt orchestration and contextual retrieval to cut time-to-answer on documentation searches.</li>
+              <li>Applied graph-based retrieval and reasoning over organizational knowledge to sharpen retrieval relevance.</li>
+              <li>Promoted engineer → full-stack developer → team lead by shipping production AI features end-to-end.</li>
+            </ul>
+            <div class="tl-item__stack mono"><span>Python</span><span>RAG</span><span>LLM</span><span>Graph retrieval</span><span>Full-stack</span></div>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-item__node" aria-hidden="true"></div>
+          <div class="tl-item__card" data-tilt>
+            <p class="tl-item__period mono">Nov 2023 — Jun 2024</p>
+            <h3 class="tl-item__role">AI &amp; Digital Twins Researcher — Master Thesis</h3>
+            <p class="tl-item__org">Blekinge Institute of Technology × Volvo CE · Sweden — Brazil — Japan</p>
+            <ul>
+              <li>Built deep-learning failure-classification models for construction machinery data in PyTorch and Scikit-learn.</li>
+              <li>Framed a predictive-maintenance digital-twin concept around business, user and feasibility constraints with an international interdisciplinary team.</li>
+            </ul>
+            <div class="tl-item__stack mono"><span>PyTorch</span><span>Scikit-learn</span><span>Digital twins</span><span>Deep learning</span></div>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-item__node" aria-hidden="true"></div>
+          <div class="tl-item__card" data-tilt>
+            <p class="tl-item__period mono">Sep 2023 — Jan 2024</p>
+            <h3 class="tl-item__role">Systems Developer Intern — AI / ML</h3>
+            <p class="tl-item__org">Ericsson &amp; Blekinge Institute of Technology</p>
+            <ul>
+              <li>Built automated anomaly-detection models in Python and Scikit-learn for telecom infrastructure data.</li>
+              <li>Shipped ML components into a full-stack application used by network operations, served behind REST APIs.</li>
+            </ul>
+            <div class="tl-item__stack mono"><span>Anomaly detection</span><span>Python</span><span>REST APIs</span></div>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-item__node" aria-hidden="true"></div>
+          <div class="tl-item__card" data-tilt>
+            <p class="tl-item__period mono">Jun 2022 — Aug 2022</p>
+            <h3 class="tl-item__role">Systems Developer</h3>
+            <p class="tl-item__org">Karlskrona Kommun · Sweden</p>
+            <ul>
+              <li>Built a forecasting model for vandalism incidents, enabling proactive municipal resource planning.</li>
+            </ul>
+            <div class="tl-item__stack mono"><span>Forecasting</span><span>Python</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ══════════ PIPELINE (sticky scroll story) ══════════ -->
+    <section class="pipeline" id="pipeline">
+      <div class="pipeline__sticky">
+        <div class="section__head">
+          <span class="section__index mono">03</span>
+          <h2 class="section__title">Anatomy of a<br/><span class="grad">RAG pipeline</span></h2>
+          <p class="pipeline__hint mono">keep scrolling — the pipeline runs as you go ↓</p>
+        </div>
+        <div class="pipeline__stage-text">
+          <p class="pipeline__stage-num mono" id="stageNum">01 / 05</p>
+          <h3 id="stageTitle">Ingest</h3>
+          <p id="stageDesc">Documents, wikis, tickets — raw organizational knowledge flows in.</p>
+        </div>
+        <div class="pipeline__diagram" id="pipeDiagram">
+          <svg class="pipeline__wire" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+            <path id="wirePath" d="M40,60 C160,60 160,60 260,60 S460,60 500,60 S740,60 740,60 S940,60 960,60" fill="none" stroke="rgba(85,215,255,.18)" stroke-width="2"/>
+            <path id="wireGlow" d="M40,60 C160,60 160,60 260,60 S460,60 500,60 S740,60 740,60 S940,60 960,60" fill="none" stroke="url(#wireGrad)" stroke-width="2.5" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+            <defs><linearGradient id="wireGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#55d7ff"/><stop offset=".5" stop-color="#8b7bff"/><stop offset="1" stop-color="#5affc3"/></linearGradient></defs>
+            <circle class="packet" id="packet1" r="4" fill="#55d7ff"/>
+            <circle class="packet" id="packet2" r="3" fill="#8b7bff"/>
+            <circle class="packet" id="packet3" r="2.5" fill="#5affc3"/>
+          </svg>
+          <div class="pipeline__nodes">
+            <div class="pnode" data-stage="0"><div class="pnode__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 11h18"/></svg></div><span class="mono">Docs</span></div>
+            <div class="pnode" data-stage="1"><div class="pnode__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9z"/><path d="M12 11v9"/><path d="M12 11L4 6.5"/><path d="M12 11l8-4.5"/></svg></div><span class="mono">Embed</span></div>
+            <div class="pnode" data-stage="2"><div class="pnode__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/><path d="M8 10.5h5"/><path d="M10.5 8v5"/></svg></div><span class="mono">Retrieve</span></div>
+            <div class="pnode" data-stage="3"><div class="pnode__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4a4 4 0 0 0-4 4 4 4 0 0 0-2 7.5V17a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-1.5A4 4 0 0 0 16 8a4 4 0 0 0-4-4z"/><path d="M9 12h6"/><path d="M12 9v6"/></svg></div><span class="mono">Reason</span></div>
+            <div class="pnode" data-stage="4"><div class="pnode__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.6L20 10l-6.1 1.4L12 17l-1.9-5.6L4 10l6.1-1.4z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg></div><span class="mono">Answer</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ SKILLS ══════════ -->
+    <section class="section skills" id="skills">
+      <div class="section__head reveal">
+        <span class="section__index mono">04</span>
+        <h2 class="section__title">Skill<br/><span class="grad">constellation</span></h2>
+      </div>
+      <div class="skills__canvas-wrap reveal" id="skillsWrap">
+        <canvas id="skillsCanvas" aria-label="Interactive constellation of skills"></canvas>
+        <div class="skills__hint mono">hover the nodes — they remember you</div>
+      </div>
+      <div class="skills__groups">
+        <div class="skill-group reveal" data-tilt>
+          <h4 class="mono">// LLM &amp; GenAI</h4>
+          <p>RAG · prompt engineering · graph-based retrieval · vector search · embeddings · semantic search · LLM integration</p>
+        </div>
+        <div class="skill-group reveal" style="--d:.06s" data-tilt>
+          <h4 class="mono">// Agentic systems</h4>
+          <p>Multi-agent workflows · agent orchestration · tool use / function calling · Claude Code agents · PRD-driven automation</p>
+        </div>
+        <div class="skill-group reveal" style="--d:.12s" data-tilt>
+          <h4 class="mono">// Machine learning</h4>
+          <p>PyTorch · TensorFlow · Scikit-learn · deep learning · anomaly detection · classification · predictive maintenance</p>
+        </div>
+        <div class="skill-group reveal" style="--d:.18s" data-tilt>
+          <h4 class="mono">// Engineering</h4>
+          <p>Python · Java · TypeScript · Angular · R · C · REST APIs · AWS · scalable architecture · full-stack delivery</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ WORK ══════════ -->
+    <section class="section work" id="work">
+      <div class="section__head reveal">
+        <span class="section__index mono">05</span>
+        <h2 class="section__title">Selected<br/><span class="grad">systems</span></h2>
+      </div>
+      <div class="work__grid">
+        <article class="work-card reveal" data-tilt>
+          <div class="work-card__glow"></div>
+          <p class="work-card__type mono">PRODUCTION · ERICSSON</p>
+          <h3>Internal AI Knowledge Assistant</h3>
+          <p>LLM-driven RAG assistant over internal documentation — prompt orchestration, contextual and graph-based retrieval, delivered across the full stack from model to interface. Now leading the team behind it.</p>
+          <div class="work-card__stack mono"><span>Python</span><span>RAG</span><span>Graph retrieval</span><span>LLM</span></div>
+        </article>
+        <article class="work-card reveal" style="--d:.08s" data-tilt>
+          <div class="work-card__glow"></div>
+          <p class="work-card__type mono">RESEARCH · VOLVO CE</p>
+          <h3>Failure-Classification Digital Twin</h3>
+          <p>Deep-learning models classifying failures in construction machinery, framed into a predictive-maintenance digital-twin concept with an international team across three continents.</p>
+          <div class="work-card__stack mono"><span>PyTorch</span><span>Scikit-learn</span><span>Digital twins</span></div>
+        </article>
+        <article class="work-card reveal" style="--d:.16s" data-tilt>
+          <div class="work-card__glow"></div>
+          <p class="work-card__type mono">ML SYSTEMS · TELECOM</p>
+          <h3>Network Anomaly Detection</h3>
+          <p>Automated anomaly-detection models for telecom infrastructure data, integrated behind REST APIs into a full-stack app used by network operations.</p>
+          <div class="work-card__stack mono"><span>Scikit-learn</span><span>Python</span><span>REST</span></div>
+        </article>
+        <article class="work-card reveal" style="--d:.24s" data-tilt>
+          <div class="work-card__glow"></div>
+          <p class="work-card__type mono">FORECASTING · PUBLIC SECTOR</p>
+          <h3>Municipal Incident Forecasting</h3>
+          <p>Forecasting model for vandalism incidents enabling proactive resource planning for the municipality of Karlskrona.</p>
+          <div class="work-card__stack mono"><span>Forecasting</span><span>Python</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ══════════ CONTACT ══════════ -->
+    <section class="contact" id="contact">
+      <div class="contact__inner">
+        <p class="mono reveal contact__eyebrow">// STDOUT</p>
+        <h2 class="contact__title reveal" style="--d:.06s">Let's build something<br/><span class="grad">intelligent.</span></h2>
+        <p class="contact__sub reveal" style="--d:.12s">Have an AI problem worth solving? My inbox compiles instantly.</p>
+        <div class="contact__actions reveal" style="--d:.18s">
+          <a class="btn btn--primary btn--big" href="mailto:albardansamer@gmail.com" data-magnetic><span>albardansamer@gmail.com</span></a>
+        </div>
+        <div class="contact__links reveal mono" style="--d:.24s">
+          <a href="https://www.linkedin.com/in/samer-albardan" target="_blank" rel="noopener" data-magnetic>LinkedIn ↗</a>
+          <a href="https://github.com/samer-br" target="_blank" rel="noopener" data-magnetic>GitHub ↗</a>
+          <span>Karlskrona, Sweden</span>
+        </div>
+      </div>
+      <footer class="footer mono">
+        <span>© <span id="year"></span> Samer Albardan</span>
+        <span>designed &amp; hand-coded by me — no frameworks, just canvas &amp; caffeine</span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/particles.js" defer></script>
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}.loader{display:none}</style></noscript>
+</body>
+</html>
